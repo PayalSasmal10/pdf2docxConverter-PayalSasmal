@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from djangoconvertvdoctopdf.convertor import StreamingConvertedPdf
 from pdf2docx import Converter
-import tkinter, os, fnmatch, mimetypes
+import os, fnmatch, mimetypes
 from django.conf import settings
 from django.http.response import HttpResponse
 
