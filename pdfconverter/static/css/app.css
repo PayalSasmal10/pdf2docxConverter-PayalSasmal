@@ -9,3 +9,35 @@
     color: white;
     border-radius: 4px;
 }
+
+footer{
+    padding: 1rem 1rem;
+    background-color: var(--black);
+    color: var(--off-white);
+    width: 100%;
+    height: 80px;
+}
+
+.footerdiv {
+    text-align: center;
+    font-family: 'Nerko One', cursive;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+}
+.social a {
+    color: #ffffff;
+    padding: 0.8rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.copyright {
+      color: #ffffff;
+      text-align: center;
+}

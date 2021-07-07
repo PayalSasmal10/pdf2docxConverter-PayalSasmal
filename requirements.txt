@@ -3,4 +3,4 @@ djangoconvertvdoctopdf==1.0.1
 docx2pdf==0.1.7
 gunicorn==20.1.0
 pdf2docx==0.5.2
-whitenoise==5.2.0
+whitenoise==5.2.0   
