@@ -31,7 +31,7 @@ def uploadfile(request):
                         removeExtension = os.path.splitext(pdfPath)[0]
                         doc = Document()
                         doc.save(removeExtension + '.docx')
-                        docPath = os.path.join(BASE_DIR, 'media', removeExtension + '.docx')
+                        docPath = os.path.join(BASE_DIR, removeExtension + '.docx')
                         cv.convert(docPath)
                         cv.close()
                         readFile = open(docPath, 'rb')
