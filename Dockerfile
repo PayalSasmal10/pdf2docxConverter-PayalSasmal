@@ -1,30 +1,24 @@
-FROM python:3.9.5-alpine3.13
+FROM python:3.7-slim
 
-MAINTAINER "PAYALSASMAL" "sasmalpayal@gmail.com"
+LABEL org.opencontainers.image.authors="PAYALSASMAL, sasmalpayal@gmail.com"
 
-WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV DEBUG 0
 
-ADD requirements.txt /app/requirements.txt
+RUN python -m pip install --upgrade pip
 
-RUN set -ex \ 
-    && apk add --no-cache --virtual .build-deps postgresql-dev build-base \ 
-    && python -m venv /env \
-    && /env/bin/pip install --upgrade pip \
-    && /env/bin/pip install --no-cache-dir -r /app/requirements.txt \
-    && runDeps="$(scanelf --needed --nobanner --recursive /env \
-        | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
-        | sort -u \
-        | xargs -r apk info --installed \
-        | sort -u)" \
-    && apk add --virtual rundeps $runDeps \
-    && apk del .build-deps
+RUN apt-get update && apt-get install -y tcl tk
 
-ADD todo-project /app
-WORKDIR /app
+COPY ./requirements.txt /app/requirements.txt
 
-ENV VIRTUAL_ENV /env
-ENV PATH /env/bin:$PATH
+RUN pip install -r /app/requirements.txt
 
-EXPOSE 8000
+RUN mkdir -p /usr/share/man/man1
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "ToDoProject.wsgi"]
+RUN apt-get update && apt-get install -y \
+    libreoffice-base default-jre
+
+COPY . .
+
+CMD gunicorn -b 0.0.0.0:8000 pdfconverter.wsgi:application
