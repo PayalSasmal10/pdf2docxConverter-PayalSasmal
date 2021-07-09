@@ -7,6 +7,7 @@ from pdf2docx import Converter
 import os, fnmatch, mimetypes
 from django.conf import settings
 from django.http.response import HttpResponse
+from _tkinter import *
 
 
 # Create your views here.
