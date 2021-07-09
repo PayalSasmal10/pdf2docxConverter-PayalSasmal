@@ -1,8 +1,8 @@
 # pdf2docxConverter-PayalSasmal
-This project is for converting pdf to docx and vise versa.
+This project is for converting pdf to docx and vise versa.:v:
 
 ## Hosted Link
-This project is hosted on [**heroku**](https://www.heroku.com/) here is the link [**Converter Site**](https://pdfconverter-by-payal.herokuapp.com/)
+This project is hosted on [**heroku**](https://www.heroku.com/) here is the link [**Converter Site**](https://pdfconverter-by-payal.herokuapp.com/) :heart_eyes:
 
 ## Running the Project Locally
 
@@ -32,4 +32,4 @@ The project will be available at **127.0.0.1:8000**.
 The source code is released under the [MIT License](https://github.com/PayalSasmal10/pdf2docxConverter-PayalSasmal/blob/main/LICENSE).
 
 ## Contributing
-If you are contributing :smiley: please check the Contribute file
+If you are contributing :smiley: please check the [Contributing file](https://github.com/PayalSasmal10/pdf2docxConverter-PayalSasmal/blob/main/CONTRIBUTING.md) before raise the PR.
