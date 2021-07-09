@@ -13,7 +13,7 @@
 <body style="background-color: #5c848e;">
   <nav class="navbar navbar-expand-lg navbar-light mb-4" style="background-color: #1e8026">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'uploadfile' %}">PDF Converter</a>
+      <a class="navbar-brand" href="{% url 'uploadfile' %}">PDF ⮀ DOC</a>
       <p style="margin: 2px; float: right;">Made with ❤️ by Payal</p>
     </div>
   </nav>
@@ -24,7 +24,7 @@
         <div class="card mb-4">
           <div class="card-body" style="height: 200px; text-align: center;">
             {% block content %}
-            <h2 style="margin-bottom: 2.3rem;">Doc to PDF</h2>
+            <h2 style="margin-bottom: 2.3rem;">PDF ⮀ DOC</h2>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="file" name="document">

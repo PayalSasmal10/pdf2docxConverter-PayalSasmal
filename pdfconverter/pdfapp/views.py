@@ -22,22 +22,23 @@ def uploadfile(request):
             fs = FileSystemStorage()
             fs.save(uploaded_file.name, uploaded_file)
             listOfFiles = os.listdir('./media')
-            print("listOfFiles:",listOfFiles)
             pattern = "*.pdf"
             for entry in listOfFiles:
                 if fnmatch.fnmatch(entry, pattern):
-                        pdfPath = os.path.join(BASE_DIR, entry)
-                        cv = Converter(pdfPath)         
+                        pdfPath = os.path.join(BASE_DIR, 'media', entry)
+                        cv = Converter(pdfPath)      
                         removeExtension = os.path.splitext(pdfPath)[0]
                         doc = Document()
                         doc.save(removeExtension + '.docx')
-                        docPath = os.path.join(BASE_DIR, removeExtension + '.docx')
+                        docPath = os.path.join(BASE_DIR, 'media', removeExtension + '.docx')
                         cv.convert(docPath)
                         cv.close()
                         readFile = open(docPath, 'rb')
                         mime_type, _ = mimetypes.guess_type(docPath)
                         response = HttpResponse(readFile, content_type=mime_type)
-                        response['Content-Disposition'] = "attachment; filename=%s" % removeExtension + '.docx'
+                        filename = os.path.basename(docPath)
+                        print(filename)
+                        response['Content-Disposition'] = 'attachment; filename="' + filename + '"'
                         fs.delete(uploaded_file.name)
                         fs.delete(readFile.name)
                         return response 
