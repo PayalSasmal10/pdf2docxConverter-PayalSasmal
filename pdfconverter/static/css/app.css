@@ -2,12 +2,14 @@
     background-color: #E17701;
     color: white;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .btn2 {
     background-color: #214761;
     color: white;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 footer{
