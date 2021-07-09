@@ -21,4 +21,4 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
-CMD gunicorn -b 0.0.0.0:8000 pdfconverter.wsgi:application
+CMD gunicorn -b 0.0.0.0:$PORT pdfconverter.wsgi:application
