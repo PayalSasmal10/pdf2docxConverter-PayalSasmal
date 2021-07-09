@@ -26,7 +26,7 @@ def uploadfile(request):
             pattern = "*.pdf"
             for entry in listOfFiles:
                 if fnmatch.fnmatch(entry, pattern):
-                        pdfPath = os.path.join(BASE_DIR, 'media', entry)
+                        pdfPath = os.path.join(BASE_DIR, entry)
                         cv = Converter(pdfPath)         
                         removeExtension = os.path.splitext(pdfPath)[0]
                         doc = Document()
