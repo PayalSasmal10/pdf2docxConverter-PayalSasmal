@@ -1,6 +1,9 @@
 # pdf2docxConverter-PayalSasmal
 This project is for converting pdf to docx and vise versa.:v:
 
+# Speciality
+This is not storing data at database so there is no data exposure. Feel free to use it. :smiley:
+
 ## Hosted Link
 This project is hosted on [**heroku**](https://www.heroku.com/) here is the link [**Converter Site**](https://pdfconverter-by-payal.herokuapp.com/) :heart_eyes:
 
