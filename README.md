@@ -1,5 +1,5 @@
 # pdf2docxConverter-PayalSasmal
-This project is for converting pdf to docx and vise versa.:v:
+This project is for converting pdf to docx and vice versa.:v:
 
 # Speciality
 This is not storing data at database so there is no data exposure. Feel free to use it. :smiley:
